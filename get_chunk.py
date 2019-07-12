@@ -3,12 +3,11 @@ import xlwt
 import spacy
 nlp = spacy.load('en')
 
-wb = xlrd.open_workbook('20180930_Sample_Data_USSIC_0100-0971_Listed_Agri.xls')
-sheet = wb.sheet_by_name('20180925_Sample_Data for QC')
+wb = xlrd.open_workbook('sheet.xls')
+sheet = wb.sheet_by_name('sheet_name')
 
 workwrite = xlwt.Workbook()
-sheet1 = workwrite.add_sheet('sheet1', cell_overwrite_ok=True)
-
+sheet1 = workwrite.add_sheet('new_sheet', cell_overwrite_ok=True)
 
 for i in range(2, sheet.nrows):
     cell = sheet.cell(i, 8)
