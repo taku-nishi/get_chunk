@@ -1,21 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-get_ipython().system('pip3 install spacy')
-
-
-# In[2]:
-
-
-# get_ipython().system('python -m spacy download en')
-
-
-# In[5]:
-
-
 import xlrd
 import xlwt
 import spacy
@@ -41,18 +23,3 @@ for i in range(2, sheet.nrows):
         sheet1.write(i, 1, str(products))
     print(products)
     
-
-# workwrite.save('20180930_Sample_Data_USSIC_0100-0971_Listed_Agri.xls')
-#     for token in products:
-#         if token.ent_type_ == "PRODUCT" or "FAC":
-#             products.append(token)
-#     print(products)
-
-
-
-
-# In[ ]:
-
-
-
-
