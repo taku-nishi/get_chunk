@@ -1,2 +1,3 @@
-# get_chunk
-spacyを使って、.xlsファイルから情報を取得し、chunkで区切ったリストで上書きする。
+## how to use
+1. get lists punctuated by chunk using spacy to get information from xls or csv file 
+2. overwrite the file with new lists
