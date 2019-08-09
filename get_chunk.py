@@ -13,12 +13,13 @@ for i in range(1, sheet.nrows):
     cell = sheet.cell(i, 1)
 
     sentence = cell.value
-    noun_chunk_test = nlp(sentence)
+    text = nlp(sentence)
 
-    products = []
+    ent = []
     
-    for noun_chunk in noun_chunk_test.noun_chunks:
-        products.append(noun_chunk)
-        new_sheet.write(i, 1, str(products))
+    for entity in text.ents:
+        if entity.label_ == "ORG":
+            ent.append(entity)
+            new_sheet.write(i, 1, str(ent))
 sheet_write.save('new_sheet.xls')
 
