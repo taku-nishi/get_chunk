@@ -3,14 +3,14 @@ import xlwt
 import spacy
 nlp = spacy.load('en')
 
-wb = xlrd.open_workbook('sheet.xls')
-sheet = wb.sheet_by_name('sheet_name')
+wb = xlrd.open_workbook('List_data.xls')
+sheet = wb.sheet_by_name('Sample')
 
-workwrite = xlwt.Workbook()
-sheet1 = workwrite.add_sheet('new_sheet', cell_overwrite_ok=True)
+sheet_write = xlwt.Workbook()
+new_sheet = sheet_write.add_sheet('new_sheet', cell_overwrite_ok=True)
 
-for i in range(2, sheet.nrows):
-    cell = sheet.cell(i, 8)
+for i in range(1, sheet.nrows):
+    cell = sheet.cell(i, 1)
 
     sentence = cell.value
     noun_chunk_test = nlp(sentence)
@@ -19,6 +19,6 @@ for i in range(2, sheet.nrows):
     
     for noun_chunk in noun_chunk_test.noun_chunks:
         products.append(noun_chunk)
-        sheet1.write(i, 1, str(products))
-    print(products)
-    
+        new_sheet.write(i, 1, str(products))
+sheet_write.save('new_sheet.xls')
+
