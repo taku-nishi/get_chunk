@@ -1,5 +1,5 @@
 ## how to use
-1. get lists punctuated by chunk using spacy to get information from xls or csv file 
+1. run get_chunk.py
 2. make a new file with chunk lists
 
 https://spacy.io/usage
